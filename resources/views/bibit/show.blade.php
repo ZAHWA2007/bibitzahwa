@@ -36,7 +36,7 @@
                 <tr> 
                     <th>Harga</th> 
                     <td>:</td> 
-                    <td>{{$data[0]->harga}}</td> 
+                    <td>{{$data[0]->price}}</td> 
                 </tr> 
                 <tr> 
                     <th>Deskripsi</th> 

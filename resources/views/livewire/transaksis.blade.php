@@ -1,3 +1,4 @@
+
 <div class="row">
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -22,9 +23,9 @@
                             <td>{{ $data->invoice }}</td>
                         </tr>
                         <tr>
-                            <th>Customer</th>
+                            <th>Pelanggan</th>
                             <th>:</th>
-                            <td>{{ $data->customer->name}}</td>
+                            <td>{{ $data->pelanggan->nama}}</td>
                         </tr>
                         <tr>
                             <th>Tanggal</th>
@@ -44,20 +45,20 @@
 
         <div class="col-lg-6 ps-3">
             <div class="card">
-                <div class="card-header">Produk </div>
+                <div class="card-header">bibit</div>
                 <div class="card-body">
                     <form wire:submit.prevent="store" method="POST">
 
                         @csrf
                         <div class=" card-body">
-                            <input type="hidden" name="order_id" wire:model="order_id" value="{{ $data->id }}">
+                            <input type="hidden" name="transaksi_id" wire:model="transaksi_id" value="{{ $data->id }}">
 
                             <div class="form-group">
-                                <label for="product_id">Produk</label>
-                                <select class="form-control" wire:model="product_id" name="product_id">
-                                    <option hidden>--Pilih Produk--</option>
-                                    @foreach($dataProduk as $dt )
-                                    <option value="{{ $dt->id }}">{{ $dt->name }}</option>
+                                <label for="bibit_id">bibit</label>
+                                <select class="form-control" wire:model="bibit_id" name="bibit_id">
+                                    <option hidden>--Pilih bibit--</option>
+                                    @foreach($databbitas $dt )
+                                    <option value="{{ $dt->id }}">{{ $dt->nama }}</option>
                                     @endforeach
                                 </select>
 
@@ -92,7 +93,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama Produk</th>
+                                <th>Nama bibit</th>
                                 <th>Harga</th>
                                 <th>Jumlah</th>
                                 <th>Sub Total</th>
@@ -101,10 +102,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($dataOrderDetail as $dt)
+                            @foreach($datatransaksi as $dt)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $dt->product->name }}</td>
+                                <td>{{ $dt->bibit->nama }}</td>
                                 <td>@money($dt->price)</td>
                                 <td>{{ $dt->qty}}</td>
                                 <td>@money($dt->price * $dt->qty)</td>
@@ -136,7 +137,7 @@
                                     :
                             </th>
                             <th>
-                            <input type="number" class="mt-2" wire:model.live="uang">
+                            <input type="number" class="mt-2" wire:model="uang">
                             </th>
                         </tr>
                         <tr>
@@ -152,11 +153,11 @@
                         </tr>
                     </table>
                    
-                    <button class="btn btn-lg btn-success" wire:click="receipt({{$data->id}})">
-                        <i class="fas fa-print"></i>Cetak</button>
+                    <button class="btn btn-lg btn-success"><i class="fas fa-print"></i>Cetak</button>
                  
                 </div>
             </div>
         </div>
     </div>
 </div>
+

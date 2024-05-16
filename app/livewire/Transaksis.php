@@ -5,7 +5,7 @@ namespace App\Livewire;
 
 use App\Models\Transaksi;
 use App\Models\Detiltransaksi;
-use App\Models\Bibittanaman;
+use App\Models\Bibit;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
@@ -15,7 +15,7 @@ class Transaksis extends Component
 {
     public $total;
     public $transaksi_id;
-    public $bibittanaman_id;
+    public $bibit_id;
     public $qty=1;
     public $uang;
     public $kembali;
@@ -28,7 +28,7 @@ class Transaksis extends Component
        $this->kembali=$this->uang-$this->total;
        return view('livewire.transaksis')
        ->with("data",$transaksi)
-       ->with("dataBibittanaman",Bibittanaman::where('stock','>','0')->get())
+       ->with("dataBibit",Bibit::where('stock','>','0')->get())
        ->with("dataDetiltransaksi",Detiltransaksi::where('transaksi_id','=',$transaksi->id)->get());
     }
 
@@ -40,11 +40,11 @@ class Transaksis extends Component
         ]);
         $transaksi=Transaksi::select('*')->where('user_id','=',Auth::user()->id)->orderBy('id','desc')->first();
         $this->transaksi_id=$transaksi->id;
-        $bibittanaman=Bibittanaman::where('id','=',$this->bibittanaman_id)->get();
-        $harga=$bibittanaman[0]->price;
+        $bibit=Bibit::where('id','=',$this->bibit_id)->get();
+        $harga=$bibit[0]->price;
         detiltransaksi::create([
             'transaksi_id'=>$this->transaksi_id,
-            'bibittanaman_id'=>$this->bibittanaman_id,
+            'bibit_id'=>$this->bibit_id,
             'qty'=>$this->qty,
             'price'=>$harga
         ]);
@@ -85,10 +85,10 @@ class Transaksis extends Component
         $detiltransaksi=Detiltransaksi::select('*')->where('transaksi_id','=',$id)->get();
         //dd($detiltransaksi);
         foreach ($detiltransaksi as $od){
-            $stocklama = bibittanaman::select('stock')->where('id','=',$od->bibittanaman_id)->sum('stock');
+            $stocklama = bibit::select('stock')->where('id','=',$od->bibit_id)->sum('stock');
             $stock = $stocklama - $od->qty;
             try{
-                bibittanaman::where('id','=',$od->bibittanaman_id)->update([
+                bibit::where('id','=',$od->bibit_id)->update([
                     'stock' => $stock
                 ]);
             }catch (Exception $e){

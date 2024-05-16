@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Livewire;
-use App\Models\Transaksi;
+use App\Models\transaksi;
 use Livewire\Component;
 use App\Models\Pelanggan;
 use Illuminate\Support\Facades\Auth;

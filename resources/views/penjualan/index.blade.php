@@ -1,4 +1,4 @@
 @extends('layouts.masterlw')
 @section('konten')
-@livewire('penjualan')
+  @livewire('penjualan')
 @endsection

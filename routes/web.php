@@ -39,10 +39,12 @@ Route::get('penjualan',function(){
     ]);
 })->name('penjualan');
 
-Route::get('transaksi',function(){
+Route::get('transaksis',function(){
     return view('penjualan.transaksis',[
-        "title"=>"transaksi"
+        "title"=>"transaksis"
     ]);
 });
 
-Route::get('cetakReceipt',[CetakController::class,'receipt'])->name('cetakReceipt');
+
+Route::get('cetakReceipt',[CetakController::class,'receipt'])->name('cetakReceipt')->middleware('auth');
+

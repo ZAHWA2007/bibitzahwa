@@ -35,8 +35,8 @@
  
             
                 <div class="form-group"> 
-                    <label for="harga">Harga</label> 
-                    <input type="number" class="form-control" id="harga" name="harga"> 
+                    <label for="price">Harga</label> 
+                    <input type="number" class="form-control" id="price" name="price"> 
                 </div> 
                 <div class="form-group"> 
                     <label for="description">Deskripsi</label> 
