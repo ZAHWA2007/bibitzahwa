@@ -32,7 +32,7 @@ public function store(Request $request): RedirectResponse
         "nama"=>"nullable",
         "description"=>"required",
         "stock"=>"nullable",
-        "harga"=>"nullable",
+        "price"=>"nullable",
 
     ]); 
 
@@ -53,7 +53,7 @@ public function update(bibit $bibit, Request $request): RedirectResponse
         "nama"=>"nullable",
         "description"=>"required",
         "stock"=>"nullable",
-        "harga"=>"nullable",
+        "price"=>"nullable",
         // "category_id"=>"required"
     ]);
     $bibit->update($request->all());

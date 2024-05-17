@@ -45,6 +45,7 @@ Route::get('transaksis',function(){
     ]);
 });
 
-
 Route::get('cetakReceipt',[CetakController::class,'receipt'])->name('cetakReceipt')->middleware('auth');
+
+
 

@@ -3,32 +3,32 @@
 namespace App\Livewire;
 use App\Models\transaksi;
 use Livewire\Component;
-use App\Models\Pelanggan;
+use App\Models\pelanggan;
 use Illuminate\Support\Facades\Auth;
 
 class Penjualan extends Component
 {
-    public $pelanggan_id;
+    public $pelanggans_id;
     public function render()
     {
         return view('livewire.penjualan',[
-            'data'=>Pelanggan::orderBy('id','desc')->get()
+            'data'=>pelanggan::orderBy('id','desc')->get()
         ]);
     }
 
     public function store()
     {
         $this->validate([
-            'pelanggan_id'=>'required'
+            'pelanggans_id'=>'required'
         ]);
 
         transaksi::create([
             'invoice'=>$this->invoice(),
-            'pelanggan_id'=>$this->pelanggan_id,
-            'user_id'=>Auth::user()->id,
+            'pelanggans_id'=>$this->pelanggans_id,
+            'users_id'=>Auth::user()->id,
             'total'=>'0'
         ]);
-        $this->pelanggan_id=NULL;
+        $this->pelanggans_id=NULL;
         return redirect()->to('transaksi');
     }
 

@@ -36,7 +36,7 @@ class Transaksis extends Component
     {
         $this->validate([
 
-            'bibittanaman_id'=>'required'
+            'bibit_id'=>'required'
         ]);
         $transaksi=Transaksi::select('*')->where('user_id','=',Auth::user()->id)->orderBy('id','desc')->first();
         $this->transaksi_id=$transaksi->id;
@@ -81,21 +81,21 @@ class Transaksis extends Component
 
     public function receipt($id)
     {
-        //update stok
-        $detiltransaksi=Detiltransaksi::select('*')->where('transaksi_id','=',$id)->get();
-        //dd($detiltransaksi);
-        foreach ($detiltransaksi as $od){
-            $stocklama = bibit::select('stock')->where('id','=',$od->bibit_id)->sum('stock');
+        $detiltransaksi = detiltransaksi::select('*')->where('transaksi_id','=', $id)->get();
+        //dd ($detiltransaksi);
+        foreach ($detiltransaksi as $od) {
+            $stocklama = bibit::select('stock')->where('id','=', $od->bibit_id)->sum('stock');
             $stock = $stocklama - $od->qty;
-            try{
-                bibit::where('id','=',$od->bibit_id)->update([
+            try {
+                bibit::where('id','=', $od->bibit_id)->update([
                     'stock' => $stock
                 ]);
-            }catch (Exception $e){
+            } catch (Exception $e) {
                 dd($e);
             }
         }
         return Redirect::route('cetakReceipt')->with(['id' => $id]);
+
     }
-    
 }
+

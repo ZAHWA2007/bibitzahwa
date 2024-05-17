@@ -57,7 +57,7 @@
                                 <label for="bibit_id">bibit</label>
                                 <select class="form-control" wire:model="bibit_id" name="bibit_id">
                                     <option hidden>--Pilih bibit--</option>
-                                    @foreach($databbitas $dt )
+                                    @foreach($databibit $dt )
                                     <option value="{{ $dt->id }}">{{ $dt->nama }}</option>
                                     @endforeach
                                 </select>

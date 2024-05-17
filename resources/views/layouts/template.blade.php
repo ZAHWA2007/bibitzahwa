@@ -145,7 +145,7 @@ elevation-2"
                             <a href="{{ route('user.index') }}" class="nav-link {{ ($title==='Users')?'active':''}}"> 
                                 <i class="nav-icon fas fa-users"></i> 
                                 <p> 
-                                    Users 
+                                  penjual
                                 </p> 
                             </a> 
                         </li> 
@@ -154,7 +154,7 @@ elevation-2"
                             <a href="penjualan" target="_blank" class="nav-link{{ ($title==='Penjualan') ? 'active':'' }}"> 
                                 <i class="nav-icon fas fa-cash-register"></i> 
                                 <p> 
-                                    Penjualan
+                                   Transaksi
                                     </p> 
                             </a> 
                         </li> 

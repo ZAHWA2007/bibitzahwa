@@ -23,7 +23,7 @@
             <div class=" card-body">
                 <div class="form-group">
                     <label for="name">Pelanggan</label>
-                    <select class="form-control" wire:model="pelanggan_id">
+                    <select class="form-control" wire:model="pelanggans_id">
                         <option hidden>--Pilih Pelanggan--</option>
                         @foreach($data as $dt )
                         <option value="{{ $dt->id }}">{{ $dt->nama }}</option>

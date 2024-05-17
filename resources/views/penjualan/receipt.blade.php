@@ -10,7 +10,7 @@
     <style>
 @page{
     margin:0;
-    border:0;
+    btransaksi:0;
     size:80mm,100%;
    
 }    
@@ -23,19 +23,19 @@ body{
 </head>
 <body>
 
-<p>invoice:{{ $dataTransaksis->invoice}}<br>Pelanggan:{{ $dataTransaksis->pelanggan->nama}}<br>Cashier:{{ Auth::user()->nama}}<br>Tanggal:{{$dataTransaksis->created_at->format('d M Y H:m')}}</p>
+<p>invoice:{{$dataTransaksi->invoice}}<br>Pelanggan:{{ $dataTransaksi->pelanggan->nama}}<br>Cashier:{{ Auth::user()->nama}}<br>Tanggal:{{$dataTransaksi->created_at->format('d M Y H:m')}}</p>
 <table>
     <thead>
         <tr>
-            <td>Bibittanaman</td>
+            <td>bibit</td>
             <td>Qty</td>
-            <td>Harga</td>
+            <td>harga</td>
             <td>Amount</td>
         </tr>
     </thead>
-@foreach($dataOrderDetail as $dod)
+@foreach($datadetiltransaksi as $dod)
 <tr>
-            <td>{{ $dod->bibittanaman->nama }}</td>
+            <td>{{$dod->bibit->nama }}</td>
             <td>{{$dod->qty}}</td>
             <td>@money($dod->harga)</td>
             <td>@money($dod->harga*$dod->qty)</td>
@@ -44,7 +44,7 @@ body{
 @endforeach
 <tr>
     <td colspan="3">Total:</td>
-    <td>@money($dataTransaksis->total)</td>
+    <td>@money($dataTransaksi->total)</td>
 </tr>
 </table>
 
@@ -55,7 +55,7 @@ body{
         setInterval(myURL,5000);
     });
     function myURL() {
-        document.location.href = "{{ route('penjualan') }}";
+        document.location.href = "{{route('penjualan') }}";
         // clearInterval(interval);
     }
    

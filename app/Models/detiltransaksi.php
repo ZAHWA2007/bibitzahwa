@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Order_detail extends Model
+class detiltransaksi extends Model
 {
-    protected $fillable=['transaksis_id','bibit_id','qty','price'];
+    protected $fillable=['transaksis_id','bibit_id','qty','harga'];
     use HasFactory;
 
-    public function order():BelongsTo
+    public function transaksi():BelongsTo
     {
         return $this->belongsTo(Transaksis::class);
     }
 
-    public function product():BelongsTo
+    public function bibit():BelongsTo
     {
         return $this->belongsTo(bibit::class);
     }

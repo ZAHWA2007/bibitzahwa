@@ -12,12 +12,8 @@ class bibit extends Model
 {
     use HasFactory;
 
-    protected $fillable=['nama','description','stock','harga'];
+    protected $fillable=['nama','description','stock','price'];
 
-    // public function category():BelongsTo
-    // {
-    //     return $this->belongsTo(Category::class);
-    // }
 
     public function detiltransaksi():HasMany
     {

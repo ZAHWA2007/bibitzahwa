@@ -28,7 +28,11 @@
                 <div class="form-group">
                     <label for="nama">Nama Pelanggan</label>
                     <input type="text" class="form-control" id="nama" name="nama" placeholder="" value="{{$pelanggan->nama}}">
-                </div>                
+                </div>   
+                <div class="form-group">
+                    <label for="bibit">Bibit</label>
+                    <input type="text" class="form-control" id="bibit" name="bibit" value="{{$pelanggan->bibit}}">
+                </div>             
                 <div class="form-group">
                     <label for="hp">No HP</label>
                     <input type="text" class="form-control" id="hp" name="hp" value="{{$pelanggan->hp}}">

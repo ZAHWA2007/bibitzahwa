@@ -11,7 +11,7 @@ class transaksi extends Model
 {
     use HasFactory;
 
-    protected $fillable=['invoice','pelanggan_id','user_id','total'];
+    protected $fillable=['invoice','pelanggans_id','users_id','total'];
 
     public function detiltransaksis():HasMany
     {
@@ -20,6 +20,6 @@ class transaksi extends Model
 
     public function pelanggans():BelongsTo
     {
-        return $this->belongsTo(Pelanggans::class);
+        return $this->belongsTo(Pelanggan::class);
     }
 }
