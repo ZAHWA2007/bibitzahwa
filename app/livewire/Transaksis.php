@@ -2,14 +2,13 @@
 
 namespace App\Livewire;
 
-
-use App\Models\Transaksi;
-use App\Models\Detiltransaksi;
-use App\Models\Bibit;
 use Exception;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Livewire\Component;
+use App\Models\Transaksi;
+use App\Models\Detiltransaksi;
+
 
 class Transaksis extends Component
 {
