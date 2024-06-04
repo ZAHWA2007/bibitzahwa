@@ -37,7 +37,6 @@ route('pelanggan.create') }}">
  <tr>
  <td>{{ $loop->iteration }}</td>
  <td>{{ $dt->nama }}</td>
- <td>{{ $dt->bibit }}</td>
  <td>{{ $dt->hp }}</td>
  <td>{{ $dt->alamat}}</td>
  <td>

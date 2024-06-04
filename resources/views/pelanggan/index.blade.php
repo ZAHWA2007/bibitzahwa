@@ -27,11 +27,7 @@
                 <div class="form-group">
                     <label for="nama">Nama Pelanggan</label>
                     <input type="text" class="form-control" id="nama" name="nama" placeholder="">
-                </div>  
-                <div class="form-group">
-                    <label for="bibit">Bibit</label>
-                    <input type="text" class="form-control" id="bibit" name="bibit" placeholder="">
-                </div>                
+                </div>                 
                 <div class="form-group">
                     <label for="hp">No HP</label>
                     <input type="text" class="form-control" id="hp" name="hp">
@@ -64,7 +60,6 @@
                     <tr>
                         <th>No</th>
                         <th>Nama</th>
-                        <th>Bibit</th>
                         <th>No HP</th>
                         <th>Alamat</th>
                         <th>Aksi</th>
@@ -76,7 +71,7 @@
                     <tr>
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $dt->nama }}</td>
-                        <td>{{ $dt->bibit }}</td>
+                     
                         <td>{{ $dt->hp }}</td>
                         <td>{{ $dt->alamat }}</td>
                         <td>

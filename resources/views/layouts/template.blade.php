@@ -35,14 +35,14 @@
             <ul class="navbar-nav ml-auto"> 
             <li class="nav-item dropdown">
    <a class="nav-link" data-toggle="dropdown" href="#">
-      <i class="far fa-user mr-2"></i>
+      <i class="far fa-user mr-2"></i> {{ Auth::user()->name }}
       <span class="badge badge-warning navbar-badge"></span>
    </a>
    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
         <span class="dropdown-item dropdown-header">User Menu</span>
              <div class="dropdown-divider"></div>
               <a href="#" class="dropdown-item">
-                 <i class="fas fa-user mr-2"></i> 
+                 <i class="fas fa-user mr-2"></i> {{ Auth::user()->name }}
              <span class="float-right text-muted text-sm"></span>
              </a>
                        
@@ -83,16 +83,13 @@
                 <!-- Sidebar user panel (optional) --> 
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex"> 
                     <div class="image"> 
-                        <img src="{{ asset('dist/img/4.jpeg')}}" class="img-circle 
-elevation-2" 
+                        <img src="{{ asset('dist/img/3.jpeg')}}" class="img-circle elevation-2" 
                             alt="User Image"> 
                     </div> 
                     <div class="info"> 
-                        <a href="#" class="d-block">zahwa</a> 
+                        <a href="#" class="d-block">{{Auth::user()->name}} </a> 
                     </div> 
                 </div> 
- 
- 
  
                 <!-- Sidebar Menu --> 
                 <nav class="mt-2"> 
@@ -145,7 +142,7 @@ elevation-2"
                             <a href="{{ route('user.index') }}" class="nav-link {{ ($title==='Users')?'active':''}}"> 
                                 <i class="nav-icon fas fa-users"></i> 
                                 <p> 
-                                  penjual
+                                user
                                 </p> 
                             </a> 
                         </li> 
@@ -154,7 +151,7 @@ elevation-2"
                             <a href="penjualan" target="_blank" class="nav-link{{ ($title==='Penjualan') ? 'active':'' }}"> 
                                 <i class="nav-icon fas fa-cash-register"></i> 
                                 <p> 
-                                   Transaksi
+                                 penjual
                                     </p> 
                             </a> 
                         </li> 
@@ -216,40 +213,51 @@ elevation-2"
                 <div class="container-fluid"> 
                     <div class="row"> 
                         @yield('konten') 
- 
-                    </div> 
-                    <!-- /.row --> 
-                </div> 
-                <!-- /.container-fluid --> 
-            </div> 
-            <!-- /.content --> 
-        </div> 
-        <!-- /.content-wrapper --> 
- 
-        <!-- Control Sidebar --> 
-        <aside class="control-sidebar control-sidebar-dark"> 
-            <!-- Control sidebar content goes here --> 
-        </aside> 
-        <!-- /.control-sidebar --> 
- 
- 
-    </div> 
-    <!-- ./wrapper --> 
- 
-    <!-- REQUIRED SCRIPTS --> 
- 
-    <!-- jQuery --> 
-    <script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script> 
-    <!-- Bootstrap --> 
-    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script> 
- 
+                        </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+
+
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="{{ asset('plugins/jquery/jquery.min.js')}}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
     @yield('tambahanJS') 
  
     <!-- AdminLTE --> 
     <script src="{{ asset('dist/js/adminlte.js')}}"></script>  
     <!-- OPTIONAL SCRIPTS --> 
     <script src="{{ asset('plugins/chart.js/Chart.min.js')}}"></script> 
- 
+      <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+
+<!-- Control sidebar content goes here -->
+<!-- Bootstrap 4 -->
+<script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('dist/js/adminlte.min.js')}}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset('dist/js/demo.js')}}"></script>
+</aside>
+<!-- /.control-sidebar -->
+</div>
  
     @yield('tambahScript') 
 </body>  

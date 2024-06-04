@@ -1,4 +1,3 @@
-
 <div class="row">
     @if ($errors->any())
     <div class="alert alert-danger">
@@ -25,18 +24,19 @@
                         <tr>
                             <th>Pelanggan</th>
                             <th>:</th>
-                            <td>{{ $data->pelanggan->nama}}</td>
+                            <td>{{ $data->pelanggan->nama }}</td>
+                          
                         </tr>
                         <tr>
                             <th>Tanggal</th>
                             <th>:</th>
-                            <td>{{ $data->created_at->format('d M Y')}}</td>
+                            <td>{{ $data->created_at->format('d M Y') }}</td>
                         </tr>
-                        <tr>
-                            <th>Total</th>
+                        <th>Total</th>
                             <th>:</th>
                             <td>@money($total)</td>
                         </tr>
+                        
                     </table>
                 </div>
 
@@ -45,44 +45,36 @@
 
         <div class="col-lg-6 ps-3">
             <div class="card">
-                <div class="card-header">bibit</div>
+                <div class="card-header">Bibit</div>
                 <div class="card-body">
                     <form wire:submit.prevent="store" method="POST">
 
                         @csrf
-                        <div class=" card-body">
+                        <div class="card-body">
                             <input type="hidden" name="transaksi_id" wire:model="transaksi_id" value="{{ $data->id }}">
 
                             <div class="form-group">
-                                <label for="bibit_id">bibit</label>
+                                <label for="bibit_id">Bibit</label>
                                 <select class="form-control" wire:model="bibit_id" name="bibit_id">
-                                    <option hidden>--Pilih bibit--</option>
-                                    @foreach($databibit $dt )
-                                    <option value="{{ $dt->id }}">{{ $dt->nama }}</option>
-                                    @endforeach
-                                </select>
-
+                                    <option hidden>--Pilih Bibit--</option>
+                                    @foreach ($databibit as $dt)
+                            <option value="{{ $dt->id }}">{{ $dt->nama}}</option>
+                            @endforeach
+</select>        
                             </div>
                             <div class="form-group">
                                 <label for="qty">Jumlah</label>
                                 <input type="number" class="form-control" wire:model="qty" name="qty">
-
-
                             </div>
-
                         </div>
-                        <!-- /.card-body -->
-
+<!--/.card-body-->
                         <div class="card-footer text-end">
                             <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-cart-plus"></i> Tambahkan</button>
                         </div>
                     </form>
                 </div>
             </div>
-
-
         </div>
-
     </div>
     <div class="d-flex aligns-items-center justify-content-center pt-3">
         <div class="col-lg-12">
@@ -93,16 +85,17 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama bibit</th>
-                                <th>Harga</th>
-                                <th>Jumlah</th>
-                                <th>Sub Total</th>
+                                <th>Nama Bibit</th>
+                                <th>harga</th>
+                                <th>jumlah</th>
+                                <th>Total</th>
                                 <th>Hapus</th>
-
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($datatransaksi as $dt)
+                            
+                        </tbody>
+                        @foreach($dataDetiltransaksi as $dt)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
                                 <td>{{ $dt->bibit->nama }}</td>
@@ -134,10 +127,10 @@
                                 <h2>Uang</h2>
                             </th>
                             <th>
-                                    :
+                            :
                             </th>
                             <th>
-                            <input type="number" class="mt-2" wire:model="uang">
+                            <input type="number" class="mt-2" wire:model.live="uang">
                             </th>
                         </tr>
                         <tr>
@@ -153,11 +146,10 @@
                         </tr>
                     </table>
                    
-                    <button class="btn btn-lg btn-success"><i class="fas fa-print"></i>Cetak</button>
+                    <button class="btn btn-lg btn-success" wire:click="receipt({{ $data->id }})"><i class="fas fa-print"></i>  Cetak</button>
                  
                 </div>
             </div>
         </div>
     </div>
 </div>
-

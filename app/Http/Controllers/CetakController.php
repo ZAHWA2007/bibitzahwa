@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Transaksi;
 use Illuminate\View\View;
-use App\Models\detiltransaksi;
+use App\Models\Detiltransaksi;
 
 use Illuminate\Http\Request;
 
@@ -16,10 +16,10 @@ class CetakController extends Controller
         
         $transaksi=Transaksi::find($id);
         //dd($transaksi)
-        $detiltransaksi=detiltransaksi::where('transaksi_id',$id)->get();
+        $Detiltransaksi=Detiltransaksi::where('transaksi_id',$id)->get();
         return view('penjualan.receipt')->with([
             'dataTransaksi'=>$transaksi,
-            'datadetiltransaksi'=>$detiltransaksi
+            'dataDetiltransaksi'=>$Detiltransaksi
         ]);
     }
 }

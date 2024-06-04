@@ -30,8 +30,6 @@ class PelangganController extends Controller
             $request['hp']='null';
         if (empty($request['alamat'])) 
             $request['alamat']='null';
-            if (empty($request['bibit'])) 
-            $request['bibit']='null';
         }
 
         Pelanggan::create($request->all());

@@ -29,9 +29,9 @@ public function create():View
 public function store(Request $request): RedirectResponse
 {
     $request->validate([
-        "nama"=>"nullable",
+        "nama"=>"required",
         "description"=>"required",
-        "stock"=>"nullable",
+        "stock"=>"required",
         "price"=>"nullable",
 
     ]); 
@@ -50,11 +50,11 @@ public function store(Request $request): RedirectResponse
 public function update(bibit $bibit, Request $request): RedirectResponse
 {
     $request->validate([
-        "nama"=>"nullable",
+        "nama"=>"required",
         "description"=>"required",
-        "stock"=>"nullable",
+        "stock"=>"required",
         "price"=>"nullable",
-        // "category_id"=>"required"
+    
     ]);
     $bibit->update($request->all());
     return redirect()->route('bibit.index')->with('update','Data bibit Berhasil Diubah');

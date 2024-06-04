@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('bibits', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('bibit');
             $table->string('description')->nullable();
             $table->integer('stock');
             $table->double('price');

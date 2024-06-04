@@ -28,11 +28,6 @@ input.<br><br>
 name="nama" placeholder="">
  </div>
  <div class="form-group">
- <label for="bibit">Bibit</label>
- <input type="bibit" class="form-control" id="bibit"
-name="bibit">
- </div>
- <div class="form-group">
  <label for="email">Email</label>
  <input type="email" class="form-control" id="email"
 name="email">

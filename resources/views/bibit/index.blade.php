@@ -43,7 +43,9 @@
                         <td>{{ $dt->nama }}</td> 
                         <td>{{ $dt->description }}</td> 
                         <td>{{ $dt->stock }}</td> 
-                        <td>{{ $dt->price}} </td> 
+                        <td>@money($dt->price) </td> 
+                        
+
                         <td> 
                             <div class="btn-group"> 
                                 <form action="{{ route('bibit.destroy',$dt->id)}}" method="POST"> 

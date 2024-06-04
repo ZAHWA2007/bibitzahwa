@@ -10,7 +10,7 @@ class Pelanggan extends Model
 {
         use HasFactory;
         
-        protected $fillable=['nama','hp','alamat','bibit'];
+        protected $fillable=['nama','hp','alamat'];
 
         public function transaksis():HasMany
         {
