@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CetakController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\LaporanController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,10 +27,10 @@ Route::get('/',function(){
 Route::resource('pelanggan',PelangganController::class)->except('destory');
 Route::resource('bibit',bibitController::class);
 Route::resource('user',UserController::class)->except('destroy','create','show','update','edit');
-
+Route::resource('salesreport',SalesreportController::class);
 Route::get('login',[LoginController::class,'loginView'])->name('login');
 Route::post('login',[LoginController::class,'authenticate']);
-
+Route::get('laporan', [LaporanController::class, 'index'])->name('laporan.index');
 
 Route::post('/logout',[LoginController::class,'logout'])->name('auth.logout');
 

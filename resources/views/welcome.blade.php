@@ -12,10 +12,10 @@
     <div class="row">
         <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box shadow-none">
-                <span class="info-box-icon bg-info"><i class="far fa-envelope"></i></span>
+                <span class="info-box-icon bg-info"><i class="fas fa-apple-alt icon"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Hardware</span>
+                    <span class="info-box-text">Bibit Buah</span>
                     <span class="info-box-number">None</span>
                 </div>
                 <!-- /.info-box-content -->
@@ -25,10 +25,10 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box shadow-sm">
-                <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+                <span class="info-box-icon bg-success"><i class="fas fa-carrot icon"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Software</span>
+                    <span class="info-box-text">Bibit sayur</span>
                     <span class="info-box-number">Small</span>
                 </div>
                 <!-- /.info-box-content -->
@@ -38,10 +38,10 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box shadow">
-                <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+                <span class="info-box-icon bg-warning"><i class="fas fa-spa icon"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Jasa</span>
+                    <span class="info-box-text">Bibit Bunga</span>
                     <span class="info-box-number">Regular</span>
                 </div>
                 <!-- /.info-box-content -->
@@ -51,10 +51,10 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-12">
             <div class="info-box shadow-lg">
-                <span class="info-box-icon bg-danger"><i class="far fa-star"></i></span>
+                <span class="info-box-icon bg-danger"><i class="fas fa-tree icon"></i></span>
 
                 <div class="info-box-content">
-                    <span class="info-box-text">Barang</span>
+                    <span class="info-box-text">Bibit sawit</span>
                     <span class="info-box-number">Large</span>
                 </div>
                 <!-- /.info-box-content -->
@@ -88,7 +88,7 @@
                             </div>
                         </div>
                         <h1 class="mt-1 mb-3">
-                            Rp
+                            Rp800.000
                         </h1>
                         <div class="mb-0">
                             <span class="text">
@@ -119,7 +119,7 @@
                             </div>
                         </div>
                         <h1 class="mt-1 mb-3">
-                            Rp
+                            Rp300.000
                         </h1>
                         <div class="mb-0">
                             <span class="text">
@@ -150,7 +150,7 @@
                             </div>
                         </div>
                         <h1 class="mt-1 mb-3">
-                            coba
+                            Rp.1.000,000
                         </h1>
                         <div class="mb-0">
                             <span class="text">
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                         <h1 class="mt-1 mb-3">
-                            Rp
+                            Rp.30.000,000
                         </h1>
                         <div class="mb-0">
                             <span class="text">
